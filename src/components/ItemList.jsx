@@ -45,9 +45,9 @@ export default function ItemList({ items }) {
                   {item.name}
                 </h3>
 
-                <p className="text-sm text-gray-500">
+                {/* <p className="text-sm text-gray-500">
                   Item #{index + 1}
-                </p>
+                </p> */}
               </div>
 
               <Chip
