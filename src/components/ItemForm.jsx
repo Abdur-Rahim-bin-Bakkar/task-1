@@ -45,37 +45,64 @@ export default function ItemForm({
     };
 
     return (
-        <div className="space-y-4">
+        <div className=" p-8 space-y-6">
 
-            <input
-                type="text"
-                placeholder="Item Name"
-                className="input input-bordered w-full"
+            <div className="text-center">
+                <h2 className="text-3xl font-bold">Add New Item</h2>
+                <p className="text-gray-500 mt-2">
+                    Enter item details and submit them for calculation.
+                </p>
+            </div>
+
+            <Input
+                label="Item Name"
+                placeholder="Enter item name"
+                variant="bordered"
+                radius="lg"
+                size="lg"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                className={'w-full'}
             />
 
-            <input
+            <Input
                 type="number"
-                placeholder="Price"
-                className="input input-bordered w-full"
+                label="Price"
+                placeholder="Enter item price"
+                variant="bordered"
+                radius="lg"
+                size="lg"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
+                className={'w-full'}
+
             />
 
-            <button
-                onClick={handleAddItem}
-                className="btn btn-primary w-full"
-            >
-                Add Item
-            </button>
+            <div className="flex gap-4 pt-2">
 
-            <button
-                onClick={handleSubmit}
-                className="btn btn-success w-full"
-            >
-                Submit
-            </button>
+                <Button
+                    color="primary"
+                    radius="lg"
+                    size="lg"
+                    startContent={<Plus size={20} />}
+                    className="flex-1 font-semibold"
+                    onPress={handleAddItem}
+                >
+                    Add Item
+                </Button>
+
+                <Button
+                    color="success"
+                    radius="lg"
+                    size="lg"
+                    startContent={<Send size={18} />}
+                    className="flex-1 font-semibold"
+                    onPress={handleSubmit}
+                >
+                    Submit
+                </Button>
+
+            </div>
 
         </div>
     );

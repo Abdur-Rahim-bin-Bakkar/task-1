@@ -14,9 +14,6 @@ export default function Home() {
       <div className="flex ">
 
         <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-xl p-8">
-          <h1 className="text-3xl font-bold text-center mb-8">
-            Item Calculator
-          </h1>
 
           <ItemForm
             items={items}
