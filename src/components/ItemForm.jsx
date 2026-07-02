@@ -8,6 +8,7 @@ export default function ItemForm({
     items,
     setItems,
     setResult,
+    result
 }) {
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
@@ -78,29 +79,33 @@ export default function ItemForm({
 
             />
 
-            <div className="flex gap-4 pt-2">
+            <div className="flex flex-col gap-4 pt-2">
 
                 <Button
                     color="primary"
                     radius="lg"
                     size="lg"
                     startContent={<Plus size={20} />}
-                    className="flex-1 font-semibold"
+                    className=" font-semibold w-full"
                     onPress={handleAddItem}
                 >
                     Add Item
                 </Button>
 
-                <Button
-                    color="success"
-                    radius="lg"
-                    size="lg"
-                    startContent={<Send size={18} />}
-                    className="flex-1 font-semibold"
-                    onPress={handleSubmit}
-                >
-                    Submit
-                </Button>
+                {
+                    items.length >0 &&
+                    <Button
+                        color="success"
+                        radius="lg"
+                        size="lg"
+                        startContent={<Send size={18} />}
+                        className="bg-green-600 font-semibold w-full"
+                        onPress={handleSubmit}
+                    >
+                        See Result
+                    </Button>
+                }
+
 
             </div>
 

@@ -5,8 +5,8 @@ export default function ResultCard({ result }) {
   if (!result) return null;
 
   return (
-    <Card className="mt-8 rounded-3xl shadow-xl border border-gray-200">
-      <CardHeader className="flex justify-between items-center">
+    <Card className="mb-8 max-w-2xl mx-auto rounded-3xl shadow-xl border border-gray-200">
+      <CardHeader className="flex justify-between items-center w-full">
         <div>
           <h2 className="text-2xl font-bold">Calculation Result</h2>
           <p className="text-sm text-gray-500">
