@@ -56,7 +56,7 @@ export default function ResultCard({ result }) {
               </p>
 
               <h4 className="text-2xl font-semibold">
-                {result.mostExpensive.name}
+                {result?.mostExpensive?.name}
               </h4>
             </div>
 
@@ -65,7 +65,7 @@ export default function ResultCard({ result }) {
               variant="shadow"
               className="text-lg font-bold px-4 py-5"
             >
-              ${result.mostExpensive.price}
+              ${result.mostExpensive?.price}
             </Chip>
 
           </div>

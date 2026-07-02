@@ -42,7 +42,7 @@ export default function ItemList({ items }) {
             >
               <div>
                 <h3 className="font-semibold text-lg">
-                  {item.name}
+                  {item?.name}
                 </h3>
 
                 {/* <p className="text-sm text-gray-500">
@@ -55,7 +55,7 @@ export default function ItemList({ items }) {
                 variant="shadow"
                 className="font-semibold text-base"
               >
-                ${item.price}
+                ${item?.price}
               </Chip>
             </div>
           ))}

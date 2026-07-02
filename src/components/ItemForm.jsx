@@ -13,7 +13,7 @@ export default function ItemForm({
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
 
-    const handleAddItem = () => {
+    const handleAddItem =async () => {
         if (!name || !price) return;
 
         const newItem = {
@@ -25,6 +25,20 @@ export default function ItemForm({
 
         setName("");
         setPrice("");
+
+        const res = await fetch("/api/items", {
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json",
+            },
+
+            body: JSON.stringify(items),
+        });
+
+        const data = await res.json();
+
+        setResult(data);
     };
 
     const handleSubmit = async () => {
@@ -93,7 +107,7 @@ export default function ItemForm({
                 </Button>
 
                 {
-                    items.length >0 &&
+                    items.length > 0 &&
                     <Button
                         color="success"
                         radius="lg"
